@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>I'm Really Sorry 😔</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Music Modal -->
+  <div id="musicModal" class="modal">
+    <div class="modal-content">
+      <h2>Can I Play a Sweet Song for You? 🎶💖</h2>
+      <p>It's a special song just for you! 💕</p>
+      <button class="modal-button" onclick="playMusic()">Yes, play it! 💖</button>
+      <button class="modal-button" onclick="playMusic()">No, but let it play anyway! 💕</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="header">I'm So Sorry, Boss JI 💖</h1>
+    <p class="message">Thank you for being so kind and forgiving. I value you more than you know, and I'm so lucky to have you in my life. 🌸💫</p>
+    <button class="forgive-button" onclick="openForgivePage()">Forgive Me? 🥺💖</button>
+
+    <!-- Stickers for Cutest Effect -->
+    <div class="stickers">
+      <div class="sticker heart">❤️</div>
+      <div class="sticker flower">🌸</div>
+      <div class="sticker sparkle">✨</div>
+    </div>
+
+    <!-- Floating hearts animation -->
+    <div class="hearts">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+  </div>
+
+  <!-- Background music -->
+  <audio id="apology-song" loop>
+    <source src="your-song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <script src="script.js"></script>
+  <script>
+    function playMusic() {
+      const music = document.getElementById("apology-song");
+      music.play();
+      document.getElementById("musicModal").style.display = "none"; // Hide modal after choosing
+    }
+
+    function openForgivePage() {
+      const music = document.getElementById("apology-song");
+      music.pause(); // Stop the current music
+      music.currentTime = 0; // Reset the music to the beginning
+      window.open("forgive.html", "_blank");
+    }
+
+    window.onload = () => {
+      document.getElementById("musicModal").style.display = "flex"; // Show modal on load
+    };
+  </script>
+</body>
+</html>

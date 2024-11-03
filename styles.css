@@ -1,0 +1,146 @@
+/* styles.css */
+
+body {
+  font-family: 'Dancing Script', cursive;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffd1dc, #ffb3b3, #ffe6e6);
+  color: #333;
+  overflow: hidden;
+}
+
+.container {
+  text-align: center;
+  padding: 30px;
+  background: #ffffffb3;
+  border-radius: 20px;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.header {
+  font-size: 3em;
+  color: #ff6699;
+  animation: pop 1.5s ease infinite;
+}
+
+.message {
+  font-size: 1.5em;
+  color: #666;
+  line-height: 1.5;
+  padding: 0 10px;
+  animation: fadeIn 2s ease;
+}
+
+.forgive-button {
+  background-color: #ff6699;
+  color: #fff;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  animation: pulse 1s infinite;
+}
+
+.forgive-button:hover {
+  transform: scale(1.2);
+}
+
+/* Sticker Styling */
+.stickers {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.sticker {
+  font-size: 2em;
+  animation: float 3s infinite alternate;
+}
+
+.sticker.heart { color: #ff6699; }
+.sticker.flower { color: #ffccff; }
+.sticker.sparkle { color: #ffccff; }
+
+/* Floating hearts animation */
+.hearts {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.heart {
+  width: 15px;
+  height: 15px;
+  background: #ff6699;
+  position: absolute;
+  animation: heart-float 3s ease-in-out infinite;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.heart:nth-child(1) { left: 20%; animation-duration: 4s; }
+.heart:nth-child(2) { left: 40%; animation-duration: 3.5s; }
+.heart:nth-child(3) { left: 60%; animation-duration: 3.8s; }
+.heart:nth-child(4) { left: 80%; animation-duration: 3.2s; }
+
+@keyframes heart-float {
+  0% { transform: translateY(0) scale(0.8); opacity: 0.8; }
+  50% { transform: translateY(-20px) scale(1); opacity: 1; }
+  100% { transform: translateY(0) scale(0.8); opacity: 0.8; }
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-button {
+  background-color: #ff6699;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 10px;
+}
+
+/* Animations */
+@keyframes pop {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You 💖</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Music Modal for Forgive Page -->
+  <div id="forgiveMusicModal" class="modal">
+    <div class="modal-content">
+      <h2>Can I Play a Sweet Song for You? 🎶💖</h2>
+      <p>It's a special song just for you! 💕</p>
+      <button class="modal-button" onclick="playForgiveMusic()">Yes, play it! 💖</button>
+      <button class="modal-button" onclick="playForgiveMusic()">No, but let it play anyway! 💕</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="header">You're Truly Amazing 💖</h1>
+    <p class="message">Thank you for forgiving me! Your kindness and friendship mean the world to me, and I'm so grateful to have you in my life. I promise to always be here to make you smile, laugh, and feel special! 🌸💫</p>
+
+    <!-- More Cute Stickers -->
+    <div class="stickers">
+      <div class="sticker heart">💖</div>
+      <div class="sticker flower">🌷</div>
+      <div class="sticker sparkle">💫</div>
+    </div>
+
+    <!-- Extra hearts animation -->
+    <div class="hearts">
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+      <div class="heart"></div>
+    </div>
+
+    <!-- Background music for this page -->
+    <audio id="forgive-song" loop>
+      <source src="your-forgive-song.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function playForgiveMusic() {
+      const forgiveMusic = document.getElementById("forgive-song");
+      forgiveMusic.play();
+      document.getElementById("forgiveMusicModal").style.display = "none"; // Hide modal after choosing
+    }
+
+    window.onload = () => {
+      document.getElementById("forgiveMusicModal").style.display = "flex"; // Show modal on load for forgive
+    };
+  </script>
+</body>
+</html>
